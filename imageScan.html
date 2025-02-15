@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachable Machine Image Model</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Webcam Section -->
+        <div class="webcam-section">
+            <h1>Scan Image</h1>
+            <button type="button" id="myButton" onclick="init()">Start Webcam</button>
+            <div id="webcam-container" class="webcam-container"></div>
+        </div>
+        
+        <!-- Output Section -->
+        <div class="output-section">
+            <h1>Result</h1>
+            <div class="result-container">
+                <img class="result" src="" alt="Result Image" style="max-width: 200px;" />
+                <p class="description"></p>
+            </div>
+            <div id="label-container" class="label-container"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

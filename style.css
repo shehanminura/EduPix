@@ -1,0 +1,134 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1c3b7f;
+  color: white;
+  margin: 50;
+  padding: 50;
+  text-align: center;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Main Container */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+/* Webcam & Output Sections */
+.webcam-section, .output-section {
+  flex: 1;
+  padding: 40px;
+  min-width: 300px;
+}
+
+.webcam-section {
+  background: #00253f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.output-section {
+  background: #000c4f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Webcam Display */
+.webcam-container canvas {
+  border: 2px solid #2196f3;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Result Box */
+.result-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.result-container img {
+  max-width: 200px;
+  border: 2px solid #4caf50;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Labels */
+.label-container {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 14px;
+  margin: 4px 0;
+  padding: 8px;
+  background: #000000;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+}
+
+.label span {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* Buttons */
+button {
+  background: #2196f3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #1976d2;
+}
+
+/* Hide elements when needed */
+.hidden {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .webcam-section, .output-section {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .result-container img {
+    max-width: 150px;
+  }
+}
