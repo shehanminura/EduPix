@@ -15,7 +15,7 @@ async function init() {
     setTimeout(() => {
         document.getElementById("loader").style.display = "none";
         document.getElementById("successMessage").style.display = "block";
-    },4990 );
+    },4800 );
 
         // Load model and metadata
         model = await tmImage.load(modelURL, metadataURL);
@@ -109,38 +109,3 @@ async function predict() {
     
     
 }
-  document.getElementById('myButton').addEventListener('click', function () {
-    this.classList.add('hidden'); // Add the 'hidden' class to the button
-  });
-
-  const myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-
-  const raw = JSON.stringify({
-  "contents": [
-      {
-      "parts": [
-          {
-          "text": userinput
-          }
-      ]
-      }
-  ]
-  });
-
-  const requestOptions = {
-  method: "POST",
-  headers: myHeaders,
-  body: raw,
-  redirect: "follow"
-  };
-  fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyAZbNgAgn2AHhJBjWlReaBOBofbjyN6Jeo", requestOptions)
-  .then((response) => response.json())
-  .then((result) =>{ 
-  console.log(result.candidates[0].content.parts[0].text)
-  document.getElementById("chatBox").innerHTML +=`
-          <li class="d-flex gap-4">
-          <h5>${md.render(result.candidates[0].content.parts[0].text)}</h5>
-          </li>         
-  `
-  });

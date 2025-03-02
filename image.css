@@ -1,6 +1,9 @@
 /* Global Styles */
 body {
-  background: #0a192f; /* Deep Dark Blue */
+  background-image: url("https://i.pinimg.com/originals/51/dc/e6/51dce6f2a7efa8981c57ebe54943fa01.gif");
+    background-size: cover; /* Ensures the image covers the full screen */
+  background-position: center; /* Centers the background */
+  background-repeat: no-repeat; /* Prevents image repetition */
   color: #ccd6f6; /* Light Blue-Gray */
   font-family: 'Poppins', sans-serif;
   text-align: center;
@@ -23,7 +26,9 @@ body {
 
 /* Section Styling */
 .webcam-section, .output-section {
-  background: #112240; /* Darker Blue */
+  background: rgba(54, 67, 100, 0.5); /* Dark blue with 50% transparency */
+  backdrop-filter: blur(10px); /* Blurred background effect */
+
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
@@ -111,4 +116,8 @@ button:hover {
   font-size: 18px;
   color: #64ffda; /* Neon Green */
   margin-top: 15px;
+}
+a{
+  color: white;
+  size: 5px;
 }

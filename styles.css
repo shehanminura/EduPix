@@ -7,21 +7,29 @@
 }
 
 body {
-  background: #3d5af1;
+  background-image: url("https://i.pinimg.com/originals/d3/70/e5/d370e515ecba80b8cc994e849fd0c44d.gif");
+  background-size: cover; /* Ensures the image covers the full screen */
+  background-position: center; /* Centers the background */
+  background-repeat: no-repeat; /* Prevents image repetition */
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  text-align: center;
 }
-
-.container{
-  background: #fff;
-  width: 400px;
-  border-radius: 5px;
-  padding: 25px;
+.container {
+  background: rgba(54, 67, 100, 0.5); /* Dark blue with 50% transparency */
+  backdrop-filter: blur(10px); /* Blurred background effect */
+  width: 450px;
+  border-radius: 50px;
+  padding: 60px;
   text-align: center;
   animation: fadInShow 0.3s;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for better visibility */
 }
+
 
 @keyframes sadInShow{
   0%{
@@ -67,7 +75,7 @@ button{
 }
 .otp-form p{
   margin: 20px;
-  color: green;
+  color: rgb(0, 0, 0);
 }
 .otp-group{
   display: flex;
