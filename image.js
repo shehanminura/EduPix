@@ -1,12 +1,22 @@
 const URL = "https://teachablemachine.withgoogle.com/models/yNwpWtamZ/";
 let Type="";
 let model, webcam, labelContainer, maxPredictions;
-const c=1;
 // Load the image model and setup the webcam
 async function init() {
-            const modelURL = URL + "model.json";
+        const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
+       
+        document.getElementById("myButton").style.display = "none";
     
+
+        document.getElementById("loader").style.display = "block";
+
+    // After 10 seconds, hide the loader and show the success message
+    setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("successMessage").style.display = "block";
+    },4990 );
+
         // Load model and metadata
         model = await tmImage.load(modelURL, metadataURL);
         maxPredictions = model.getTotalClasses();
