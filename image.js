@@ -1,7 +1,7 @@
 const URL = "https://teachablemachine.withgoogle.com/models/yNwpWtamZ/";
 let Type="";
 let model, webcam, labelContainer, maxPredictions;
-// Load the image model and setup the webcam
+
 async function init() {
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
@@ -11,27 +11,22 @@ async function init() {
 
         document.getElementById("loader").style.display = "block";
 
-    // After 10 seconds, hide the loader and show the success message
     setTimeout(() => {
         document.getElementById("loader").style.display = "none";
         document.getElementById("successMessage").style.display = "block";
     },4800 );
 
-        // Load model and metadata
         model = await tmImage.load(modelURL, metadataURL);
         maxPredictions = model.getTotalClasses();
     
-        // Setup the webcam
         const flip = true;
         webcam = new tmImage.Webcam(350, 350, flip);
         await webcam.setup();
         await webcam.play();
         window.requestAnimationFrame(loop);
     
-        // Add webcam to the DOM
         document.getElementById("webcam-container").appendChild(webcam.canvas);
     
-        // Add label containers
         labelContainer = document.getElementById("label-container");
         for (let i = 0; i < maxPredictions; i++) {
             const div = document.createElement("div");
@@ -41,13 +36,12 @@ async function init() {
 }
 
 async function loop() {
-    webcam.update(); // Update webcam frame
+    webcam.update(); 
     await predict();
     window.requestAnimationFrame(loop);
     
 }
 
-// Run the webcam image through the image model
 async function predict() {
     const predictions = await model.predict(webcam.canvas);
     const bestPrediction = predictions.reduce((prev, current) =>
@@ -57,7 +51,6 @@ async function predict() {
     const resultImage = document.querySelector(".result");
     const resultParagraph = document.querySelector(".description");
 
-    // Display specific information for each class
     switch (bestPrediction.className) {
         case "Home":
             resultImage.src = "https://i.pinimg.com/736x/d3/65/de/d365de448d6f061773346280338e3786.jpg";
@@ -100,7 +93,6 @@ async function predict() {
             resultParagraph.textContent = "No confident match found.";
     }
 
-    // Update label container with all predictions
     for (let i = 0; i < maxPredictions; i++) {
         const classPrediction = predictions[i].className + ": ";
         const confidence = predictions[i].probability.toFixed(2) * 100;

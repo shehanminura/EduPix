@@ -1,6 +1,5 @@
 const step1 = document.querySelector(".step1");
 const step2 = document.querySelector(".step2");
-const step3 = document.querySelector(".step3");
 const emailAddress = document.getElementById("emailAddress");
 const verifyEmail = document.getElementById("verifyEmail");
 const inputs = document.querySelectorAll(".otp-group input");
@@ -13,6 +12,7 @@ window.addEventListener("load", () => {
     step2.style.display = "none";
     nextButton.classList.add("disable");
     verifyButton.classList.add("disable");
+   
 })
 
 const validateEmail = (email) => {
@@ -83,7 +83,7 @@ verifyButton.addEventListener("click", () => {
         step1.style.display = "none";
         step2.style.display = "none";
         alert("Login Successfull!");
-        window.location.href = "imageScan.html";
+        window.location.href = "homePage.html";
 
     } else {
         setTimeout(() => {
