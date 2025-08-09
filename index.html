@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduPix</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+</head>
+<body>
+  <div class="container step1">
+    <h2>Well Come EduPix</h2>
+    <br>
+    <h4>Enter your email address</h4>
+    <br>
+    <p>You will receive an email with a one-time password</p>
+    <div class="form-group">
+      <input type="email" id="emailAddress" placeholder="Email Address" onkeyup="validateEmail(this.value)">
+    </div>
+    <button class="nextButton">Next &rarr;</button>
+  </div>
+
+  <div class="container step2">
+    <h2>OTP Verification</h2>
+    <br>
+    <h4>Enter one-time password</h4>
+    <p>A one-time password has been sent to <span id="verifyEmail"></span></p>
+    <div class="otp-form">
+      <p>Enter the 4 digit code we sent you via email to continue</p>
+      <div class="otp-group">
+        <input type="number">
+        <input type="number">
+        <input type="number">
+        <input type="number">
+      </div>
+      <p>Not your email? / Didn't receive the code?</p>
+      <a href="javascript:void(0)" onclick="changeMyEmail()"> try Again</a>
+    </div>
+    <button class="verifyButton">Verify &rarr;</button>
+  </div>
+</body>
+</html>
